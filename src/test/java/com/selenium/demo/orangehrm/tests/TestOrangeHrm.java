@@ -8,7 +8,7 @@ import com.selenium.demo.testbase.OrangeHrmTestBase;
 public class TestOrangeHrm extends OrangeHrmTestBase {
 	
 	@BeforeEach
-	public void beforePipelineHistoryPageTests() {
+	public void beforeTest() {
 	}
 
 	@Test
