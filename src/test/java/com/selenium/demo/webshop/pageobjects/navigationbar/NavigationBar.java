@@ -1,5 +1,6 @@
 package com.selenium.demo.webshop.pageobjects.navigationbar;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -8,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import com.selenium.demo.pageobjects.common.AbstractPage;
 import com.selenium.demo.testbase.BrowsersEnum;
 import com.selenium.demo.wait.WaitForElementToAppear;
+import com.selenium.demo.webshop.pageobjects.searchpage.SearchPage;
 import com.selenium.demo.webshop.pageobjects.tshirtpage.TShirtsPage;
 
 public class NavigationBar extends AbstractPage {
@@ -19,6 +21,9 @@ public class NavigationBar extends AbstractPage {
 
 	@FindBy(css = "ul.sf-menu .submenu-container [title='T-shirts']")
 	private WebElement TShirtsButton;
+	
+	@FindBy(css = "#search_query_top")
+	private WebElement searchField;
 
 	public NavigationBar(WebDriver driver, BrowsersEnum browser) {
 		super(driver, browser);
@@ -31,12 +36,19 @@ public class NavigationBar extends AbstractPage {
 		
 		new WaitForElementToAppear(driver).apply(womenButton);
 		new WaitForElementToAppear(driver).apply(dressesButton);
+		new WaitForElementToAppear(driver).apply(searchField);
+	}
+	
+	public SearchPage fillInputFieldAndSearch(String searchText) {
+		searchField.sendKeys(searchText);
+		searchField.sendKeys(Keys.ENTER);
+		
+		return new SearchPage(driver, browser);
 	}
 	
 	public TShirtsPage hoverAndClickTshirtsButton() {
 		Actions action = new Actions(driver);
 		action.moveToElement(womenButton).perform();
-		//womenButton.click();
 		new WaitForElementToAppear(driver).apply(TShirtsButton).click();
 		return new TShirtsPage(driver, browser);
 	}

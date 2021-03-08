@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import com.selenium.demo.testbase.BrowsersEnum;
 import com.selenium.demo.wait.WaitForElementToAppear;
 import com.selenium.demo.webshop.pageobjects.common.AbstractWebShopPage;
+import com.selenium.demo.webshop.pageobjects.orderpage.OrderPage;
 
 public class AddCartDialogBox extends AbstractWebShopPage {
 
@@ -15,6 +16,9 @@ public class AddCartDialogBox extends AbstractWebShopPage {
 	
 	@FindBy(css = "#layer_cart_product_attributes")
 	private WebElement colorAndSize;
+	
+	@FindBy(css = "a.button-medium > span")
+	private WebElement proceedToCheckoutButton;
 	
 	public AddCartDialogBox(WebDriver driver, BrowsersEnum browser) {
 		super(driver, browser);
@@ -25,6 +29,7 @@ public class AddCartDialogBox extends AbstractWebShopPage {
 		super.isLoaded();
 
 		new WaitForElementToAppear(driver).apply(productTitle);
+		new WaitForElementToAppear(driver).apply(proceedToCheckoutButton);
 	}
 	
 	
@@ -33,6 +38,11 @@ public class AddCartDialogBox extends AbstractWebShopPage {
 	}
 	
 	public String getColorAndSizeText() {
-		return productTitle.getText();
+		return colorAndSize.getText();
+	}
+	
+	public OrderPage clickProceedToCheckoutButton() {
+		proceedToCheckoutButton.click();
+		return new OrderPage(driver, browser);
 	}
 }
