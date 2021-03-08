@@ -24,6 +24,9 @@ public class UsersPage extends AbstractOrangeHrmPage {
 	@FindBy(css = ".highlight > tbody:nth-child(3) > tr")
 	private List<WebElement> userRowElements; 
 	
+	@FindBy(css = ".highlight > tbody:nth-child(3) > tr:nth-child(1)")
+	private WebElement firstRowInTable;
+	
 	public UsersPage(WebDriver driver, BrowsersEnum browser) {
 		super(driver, browser);
 	}
@@ -35,6 +38,7 @@ public class UsersPage extends AbstractOrangeHrmPage {
 		new WaitForElementToAppear(driver).apply(pageTitle);
 		new WaitForElementToAppear(driver).apply(usersTable);
 		new WaitForElementToAppear(driver).apply(userListSize);
+		new WaitForElementToAppear(driver).apply(firstRowInTable);
 	}
 	
 	public int getUserListSize() {

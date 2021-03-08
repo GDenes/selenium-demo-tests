@@ -5,14 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import com.selenium.demo.orangehrm.pageobjects.userpage.UsersPage;
-import com.selenium.demo.pageobjects.common.AbstractPage;
 import com.selenium.demo.testbase.BrowsersEnum;
 import com.selenium.demo.wait.WaitForElementToAppear;
 
-public class NavigationLeftSideBar extends AbstractPage {
-	
-	@FindBy(id = "menu-content")
-	private WebElement menuItemList;
+public class AdminNavigationLeftSideBar extends AbstractNavigationLeftSideBar {
 
 	@FindBy(id = "menu_admin_viewAdminModule")
 	private WebElement adminModuleButton;
@@ -23,8 +19,7 @@ public class NavigationLeftSideBar extends AbstractPage {
 	@FindBy(id = "menu_admin_viewSystemUsers")
 	private WebElement userButton;
 	
-	
-	public NavigationLeftSideBar(WebDriver driver, BrowsersEnum browser) {
+	public AdminNavigationLeftSideBar(WebDriver driver, BrowsersEnum browser) {
 		super(driver, browser);
 	}
 	
@@ -32,7 +27,6 @@ public class NavigationLeftSideBar extends AbstractPage {
 	protected void isLoaded() throws Error {
 		super.isLoaded();
 
-		new WaitForElementToAppear(driver).apply(menuItemList);
 		new WaitForElementToAppear(driver).apply(adminModuleButton);
 	}
 	

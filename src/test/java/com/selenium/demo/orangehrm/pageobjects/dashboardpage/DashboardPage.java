@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import com.selenium.demo.orangehrm.pageobjects.common.AbstractOrangeHrmPage;
+import com.selenium.demo.orangehrm.pageobjects.navigation.AbstractNavigationLeftSideBar;
+import com.selenium.demo.orangehrm.pageobjects.navigation.AdminNavigationLeftSideBar;
 import com.selenium.demo.pageobjects.common.AbstractPage;
 import com.selenium.demo.testbase.BrowsersEnum;
 import com.selenium.demo.wait.WaitForElementToAppear;

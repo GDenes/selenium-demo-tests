@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -15,7 +14,12 @@ import com.selenium.demo.orangehrm.pageobjects.loginpage.LoginPage;
 import com.selenium.demo.orangehrm.pageobjects.userpage.UsersPage;
 import com.selenium.demo.testbase.OrangeHrmTestBase;
 
-public class OrangeHrmTests extends OrangeHrmTestBase {
+public class UserLIstTests extends OrangeHrmTestBase {
+
+	private static final String SYS_ADMIN_USERNAME = "_ohrmSysAdmin_";
+	private static final String SYS_ADMIN_PASSWORD = "sysadmin";
+
+	private static final String USERNAME_VALUE_FROM_TABLE = "span";
 
 	private static final int ROW_PER_PAGE = 50;
 
@@ -24,21 +28,21 @@ public class OrangeHrmTests extends OrangeHrmTestBase {
 	@BeforeEach
 	public void beforeTest() {
 		final LoginPage loginPage = navigateToOrangeHrmPage();
-		dashboardPage = loginPage.loginWithDefaultCredential();
+		dashboardPage = loginPage.loginWithCredential(SYS_ADMIN_USERNAME, SYS_ADMIN_PASSWORD);
 	}
 
 	@Test
 	public void rowPerPageTest() {
-		UsersPage usersPage = dashboardPage.getNavigation().navigateToUserPages();
-		printAllUserName(usersPage.getAllUserName());
+		UsersPage usersPage = dashboardPage.getAdminNavigation().navigateToUserPages();
+
 		assertEquals(ROW_PER_PAGE, usersPage.getUserListSize(), "User per page number not valid");
 		assertEquals(ROW_PER_PAGE, usersPage.getAllUserName().size(), "User per page not valid");
+		printAllUserNameToTerminal(usersPage.getAllUserName());
 	}
 
-	private void printAllUserName(List<WebElement> rows) {
+	private void printAllUserNameToTerminal(List<WebElement> rows) {
 		for (int i = 0; i < rows.size(); i++) {
-			System.out.println(rows.get(i).findElement(By.xpath("/td[2]")).getText());
+			System.out.println(rows.get(i).findElement(By.tagName(USERNAME_VALUE_FROM_TABLE)).getText());
 		}
-
 	}
 }

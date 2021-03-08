@@ -38,5 +38,20 @@ public class LoginPage extends AbstractPage {
 		loginButton.click();
 		return new DashboardPage(driver, browser);
 	}
+	
+	public DashboardPage loginWithCredential(final String username, final String password) {
+		clearInputFields();
+		usernameInputField.sendKeys(username);
+		passwordInputField.sendKeys(password);
+		
+		loginButton.click();
+		
+		return new DashboardPage(driver, browser);
+	}
+	
+	private void clearInputFields() {
+		usernameInputField.clear();
+		passwordInputField.clear();
+	}
 
 }
