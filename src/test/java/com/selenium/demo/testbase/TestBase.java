@@ -15,8 +15,7 @@ public abstract class TestBase {
 	
 	protected static final Logger logger = LoggerFactory.getLogger(TestBase.class);
 
-	protected static final BrowsersEnum browser = BrowsersEnum.CHROME_HEADLESS;
-	protected static final String PIPELINE_HISTORY_PAGE = "http://localhost"; 
+	protected static final BrowsersEnum browser = BrowsersEnum.CHROME;
 	private static WebDriver driver = new DriverFactory().createDriver(browser);
 	
 	@BeforeEach
