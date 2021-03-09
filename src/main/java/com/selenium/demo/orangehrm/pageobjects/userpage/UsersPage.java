@@ -35,10 +35,12 @@ public class UsersPage extends AbstractOrangeHrmPage {
 	protected void isLoaded() throws Error {
 		super.isLoaded();
 
-		new WaitForElementToAppear(driver).apply(pageTitle);
-		new WaitForElementToAppear(driver).apply(usersTable);
-		new WaitForElementToAppear(driver).apply(userListSize);
-		new WaitForElementToAppear(driver).apply(firstRowInTable);
+final WaitForElementToAppear waitForElementToAppear = new WaitForElementToAppear(driver);
+		
+		waitForElementToAppear.apply(pageTitle);
+		waitForElementToAppear.apply(usersTable);
+		waitForElementToAppear.apply(userListSize);
+		waitForElementToAppear.apply(firstRowInTable);
 	}
 	
 	public int getUserListSize() {

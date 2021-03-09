@@ -27,10 +27,12 @@ public class LoginPage extends AbstractPage {
 	@Override
 	protected void isLoaded() throws Error {
 		super.isLoaded();
-
-		new WaitForElementToAppear(driver).apply(usernameInputField);
-		new WaitForElementToAppear(driver).apply(passwordInputField);
-		new WaitForElementToAppear(driver).apply(loginButton);
+		
+		final WaitForElementToAppear waitForElementToAppear = new WaitForElementToAppear(driver);
+		
+		waitForElementToAppear.apply(usernameInputField);
+		waitForElementToAppear.apply(passwordInputField);
+		waitForElementToAppear.apply(loginButton);
 	}
 	
 	public DashboardPage loginWithDefaultCredential() {

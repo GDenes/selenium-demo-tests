@@ -22,7 +22,7 @@ public class EmployeeClaimsTests extends OrangeHrmTestBase {
 	@BeforeEach
 	public void beforeTest() {
 		final LoginPage loginPage = navigateToOrangeHrmPage();
-		DashboardPage dashboardPage = loginPage.loginWithCredential(SYS_ADMIN_USERNAME, SYS_ADMIN_PASSWORD);
+		final DashboardPage dashboardPage = loginPage.loginWithCredential(SYS_ADMIN_USERNAME, SYS_ADMIN_PASSWORD);
 		expenseClaimsPage = dashboardPage.getAdminNavigation().navigateToExponseClaimsPage();
 	}
 	

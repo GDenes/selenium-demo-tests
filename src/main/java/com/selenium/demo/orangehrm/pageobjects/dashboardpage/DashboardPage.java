@@ -24,8 +24,10 @@ public class DashboardPage extends AbstractOrangeHrmPage {
 	protected void isLoaded() throws Error {
 		super.isLoaded();
 
-		new WaitForElementToAppear(driver).apply(pageTitle);
-		new WaitForElementToAppear(driver).apply(pageContent);
+		final WaitForElementToAppear waitForElementToAppear = new WaitForElementToAppear(driver);
+		
+		waitForElementToAppear.apply(pageTitle);
+		waitForElementToAppear.apply(pageContent);
 	}
 
 }

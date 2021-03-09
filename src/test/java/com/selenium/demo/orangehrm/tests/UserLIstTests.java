@@ -29,11 +29,12 @@ public class UserLIstTests extends OrangeHrmTestBase {
 
 	@Test
 	public void rowPerPageTest() {
-		UsersPage usersPage = dashboardPage.getAdminNavigation().navigateToUserPages();
+		final UsersPage usersPage = dashboardPage.getAdminNavigation().navigateToUserPages();
 
+		printAllUserNameToTerminal(usersPage.getAllUserName(), USERNAME_VALUE_FROM_TABLE);
+		
 		assertEquals(ROW_PER_PAGE, usersPage.getUserListSize(), "User per page number not valid");
 		assertEquals(ROW_PER_PAGE, usersPage.getAllUserName().size(), "User per page not valid");
-		printAllUserNameToTerminal(usersPage.getAllUserName(), USERNAME_VALUE_FROM_TABLE);
 	}
 
 }

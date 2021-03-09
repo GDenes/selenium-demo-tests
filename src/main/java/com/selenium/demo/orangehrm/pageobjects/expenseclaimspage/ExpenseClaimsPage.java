@@ -11,31 +11,33 @@ import com.selenium.demo.testbase.BrowsersEnum;
 import com.selenium.demo.wait.WaitForElementToAppear;
 
 public class ExpenseClaimsPage extends AbstractOrangeHrmPage {
-	
+
 	@FindBy(id = "claimRequestList")
 	private WebElement resultsTable;
-	
+
 	@FindBy(css = "tr.dataRaw")
 	private List<WebElement> tableResultRows;
-	
+
 	@FindBy(id = "noncoreIframe")
 	private WebElement iframeContent;
-	
+
 	@FindBy(id = "frmList_ohrmListComponenttotal")
 	private WebElement totalListElementInCurrentPage;
-	
+
 	public ExpenseClaimsPage(WebDriver driver, BrowsersEnum browser) {
 		super(driver, browser);
 	}
-	
+
 	@Override
 	protected void isLoaded() throws Error {
 		super.isLoaded();
-		
+
 		driver.switchTo().frame(iframeContent);
-		
-		new WaitForElementToAppear(driver).apply(resultsTable);
-		new WaitForElementToAppear(driver).apply(totalListElementInCurrentPage);
+
+		final WaitForElementToAppear waitForElementToAppear = new WaitForElementToAppear(driver);
+
+		waitForElementToAppear.apply(resultsTable);
+		waitForElementToAppear.apply(totalListElementInCurrentPage);
 	}
 
 	public WebElement getResultsTable() {
@@ -49,5 +51,5 @@ public class ExpenseClaimsPage extends AbstractOrangeHrmPage {
 	public WebElement getTotalListElementInCurrentPage() {
 		return totalListElementInCurrentPage;
 	}
-	
+
 }

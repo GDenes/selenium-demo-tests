@@ -32,7 +32,7 @@ public class MyInfoTests extends OrangeHrmTestBase {
 	@BeforeEach
 	public void beforeTest() {
 		final LoginPage loginPage = navigateToOrangeHrmPage();
-		DashboardPage dashboardPage = loginPage.loginWithCredential(SIMPLE_USER_USERNAME, SIMPLE_USER_PASSWORD);
+		final DashboardPage dashboardPage = loginPage.loginWithCredential(SIMPLE_USER_USERNAME, SIMPLE_USER_PASSWORD);
 		myInfoPage = dashboardPage.getUserNavigation().navigateToMyInfoPage();
 	}
 

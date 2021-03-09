@@ -24,7 +24,6 @@ public class UserNavigationLeftSideBar extends AbstractNavigationLeftSideBar {
 		new WaitForElementToAppear(driver).apply(myInfoMenuItem);
 	}
 	
-	
 	public MyInfoPage navigateToMyInfoPage() {
 		myInfoMenuItem.click();
 		return new MyInfoPage(driver, browser);

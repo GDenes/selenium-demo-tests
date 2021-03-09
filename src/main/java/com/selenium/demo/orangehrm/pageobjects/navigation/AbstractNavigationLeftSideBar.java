@@ -10,35 +10,37 @@ import com.selenium.demo.testbase.BrowsersEnum;
 import com.selenium.demo.wait.WaitForElementToAppear;
 
 public abstract class AbstractNavigationLeftSideBar extends AbstractPage {
-	
+
 	@FindBy(id = "menu-content")
 	private WebElement menuItemList;
-	
+
 	@FindBy(id = "menu_expense_viewExpenseModule")
 	private WebElement expenseManuItem;
 
 	@FindBy(id = "menu_expense_Claims")
 	private WebElement claimsSubMenuItem;
-	
+
 	@FindBy(id = "menu_expense_viewExpenseClaims")
 	private WebElement underClaimsEmployeeSubMenuItem;
 
 	public AbstractNavigationLeftSideBar(WebDriver driver, BrowsersEnum browser) {
 		super(driver, browser);
 	}
-	
+
 	@Override
 	protected void isLoaded() throws Error {
 		super.isLoaded();
 
 		new WaitForElementToAppear(driver).apply(menuItemList);
 	}
-	
+
 	public ExpenseClaimsPage navigateToExponseClaimsPage() {
+		final WaitForElementToAppear waitForElementToAppear = new WaitForElementToAppear(driver);
+
 		expenseManuItem.click();
-		new WaitForElementToAppear(driver).apply(claimsSubMenuItem);
+		waitForElementToAppear.apply(claimsSubMenuItem);
 		claimsSubMenuItem.click();
-		new WaitForElementToAppear(driver).apply(underClaimsEmployeeSubMenuItem);
+		waitForElementToAppear.apply(underClaimsEmployeeSubMenuItem);
 		underClaimsEmployeeSubMenuItem.click();
 		return new ExpenseClaimsPage(driver, browser);
 	}
