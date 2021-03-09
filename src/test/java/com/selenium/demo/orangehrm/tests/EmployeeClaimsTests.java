@@ -28,7 +28,7 @@ public class EmployeeClaimsTests extends OrangeHrmTestBase {
 	
 	@Test
 	public void expenseClaimsTest() {
-		int size = Integer.parseInt(expenseClaimsPage.getTotalListElementInCurrentPage().getText());
+		int size = Integer.parseInt(expenseClaimsPage.getTotalListElementInCurrentPage());
 		printAllUserNameToTerminal(expenseClaimsPage.getTableResultRows(), EXPENSE_CLAIMS_ID_TAGNAME);
 		assertEquals(size, expenseClaimsPage.getTableResultRows().size());
 	}

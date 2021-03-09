@@ -40,16 +40,11 @@ public class ExpenseClaimsPage extends AbstractOrangeHrmPage {
 		waitForElementToAppear.apply(totalListElementInCurrentPage);
 	}
 
-	public WebElement getResultsTable() {
-		return resultsTable;
-	}
-
 	public List<WebElement> getTableResultRows() {
 		return tableResultRows;
 	}
 
-	public WebElement getTotalListElementInCurrentPage() {
-		return totalListElementInCurrentPage;
+	public String getTotalListElementInCurrentPage() {
+		return totalListElementInCurrentPage.getText();
 	}
-
 }
