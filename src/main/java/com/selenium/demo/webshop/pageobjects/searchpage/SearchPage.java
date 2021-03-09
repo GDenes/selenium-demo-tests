@@ -20,11 +20,11 @@ public class SearchPage extends AbstractWebShopPage {
 	@Override
 	protected void isLoaded() throws Error {
 		super.isLoaded();
-	
 	}
 
 	public QuickViewDialogBox clickFirstElement() {
 		firstElement.click();
+		
 		return new QuickViewDialogBox(driver, browser);
 	}
 }

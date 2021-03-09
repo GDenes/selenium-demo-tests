@@ -27,6 +27,7 @@ public class TShirtsPage extends AbstractWebShopPage {
 	
 	public FadedShortPage clickFadedShortItem() {
 		fadedShortItem.click();
+		
 		return new FadedShortPage(driver, browser);
 	}
 

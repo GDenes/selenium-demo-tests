@@ -30,7 +30,6 @@ public class FadedShortPage extends AbstractWebShopPage {
 
 	public FadedShortPage(WebDriver driver, BrowsersEnum browser) {
 		super(driver, browser);
-
 	}
 
 	@Override
