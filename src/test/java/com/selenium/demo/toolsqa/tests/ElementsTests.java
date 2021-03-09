@@ -13,7 +13,9 @@ import com.selenium.demo.toolsqa.pageobjects.elementspage.ElementsPage;
 import com.selenium.demo.toolsqa.pageobjects.uploadanddownloadpage.UploadAndDownloadPage;
 
 public class ElementsTests extends ToolsQATestBase {
+
 	private static final String UPLOADED_FILE_PATH = "C:\\fakepath\\sampleFile.jpeg";
+
 	private ElementsPage elementsPage;
 
 	@BeforeEach
@@ -23,8 +25,8 @@ public class ElementsTests extends ToolsQATestBase {
 	}
 
 	@Test
-	public void DynamicPropertiesTest() {
-		DynamicPropertiesPage dynamicPropertiesPage = elementsPage.navigateToDynamicPropertiesPage();
+	public void dynamicPropertiesTest() {
+		final DynamicPropertiesPage dynamicPropertiesPage = elementsPage.navigateToDynamicPropertiesPage();
 
 		assertTrue(dynamicPropertiesPage.willEnabledButton(), "Button is not enabled");
 		assertTrue(dynamicPropertiesPage.colorChangedButton(), "The color of the button text has not changed");
@@ -32,7 +34,7 @@ public class ElementsTests extends ToolsQATestBase {
 	}
 
 	@Test
-	public void UploadTest() throws InterruptedException {
+	public void uploadTest() throws InterruptedException {
 		final UploadAndDownloadPage uploadAndDownloadPage = elementsPage.navigateToUpladAndDownloadPage();
 		uploadAndDownloadPage.uploadSampleFile();
 

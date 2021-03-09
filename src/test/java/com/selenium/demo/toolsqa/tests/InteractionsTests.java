@@ -1,6 +1,7 @@
 package com.selenium.demo.toolsqa.tests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,7 +15,7 @@ import com.selenium.demo.toolsqa.pageobjects.iteractionspage.InteractionsPage;
 public class InteractionsTests extends ToolsQATestBase {
 
 	private static final String DROPPED_VALUE = "Dropped!";
-	private static final String DROPPED_SQUARE_BACKGROUND_COLOR = "rgb(70, 130, 180)";
+	private static final String DROPPED_SQUARE_BACKGROUND_COLOR = "70, 130, 180";
 
 	InteractionsPage interactionsPage;
 
@@ -34,7 +35,7 @@ public class InteractionsTests extends ToolsQATestBase {
 
 		assertEquals(DROPPED_VALUE, droppablePage.getDroppableSquareComponentText(),
 				"Dragable component was not dropped.");
-		assertEquals(DROPPED_SQUARE_BACKGROUND_COLOR, droppablePage.getDroppableSquareComponentBackgroundValue(),
+		assertTrue(droppablePage.getDroppableSquareComponentBackgroundValue().contains(DROPPED_SQUARE_BACKGROUND_COLOR),
 				"Dragable component was not dropped, bacause background-color value: ");
 	}
 
