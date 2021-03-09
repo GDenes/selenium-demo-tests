@@ -2,12 +2,8 @@ package com.selenium.demo.orangehrm.tests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.List;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 import com.selenium.demo.orangehrm.pageobjects.dashboardpage.DashboardPage;
 import com.selenium.demo.orangehrm.pageobjects.loginpage.LoginPage;
@@ -37,12 +33,7 @@ public class UserLIstTests extends OrangeHrmTestBase {
 
 		assertEquals(ROW_PER_PAGE, usersPage.getUserListSize(), "User per page number not valid");
 		assertEquals(ROW_PER_PAGE, usersPage.getAllUserName().size(), "User per page not valid");
-		printAllUserNameToTerminal(usersPage.getAllUserName());
+		printAllUserNameToTerminal(usersPage.getAllUserName(), USERNAME_VALUE_FROM_TABLE);
 	}
 
-	private void printAllUserNameToTerminal(List<WebElement> rows) {
-		for (int i = 0; i < rows.size(); i++) {
-			System.out.println(rows.get(i).findElement(By.tagName(USERNAME_VALUE_FROM_TABLE)).getText());
-		}
-	}
 }

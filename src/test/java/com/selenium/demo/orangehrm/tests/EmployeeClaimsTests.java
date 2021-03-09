@@ -14,6 +14,8 @@ public class EmployeeClaimsTests extends OrangeHrmTestBase {
 
 	private static final String SYS_ADMIN_USERNAME = "_ohrmSysAdmin_";
 	private static final String SYS_ADMIN_PASSWORD = "sysadmin";
+	
+	private static final String EXPENSE_CLAIMS_ID_TAGNAME = "a";
 
 	ExpenseClaimsPage expenseClaimsPage;
 	
@@ -27,6 +29,7 @@ public class EmployeeClaimsTests extends OrangeHrmTestBase {
 	@Test
 	public void expenseClaimsTest() {
 		int size = Integer.parseInt(expenseClaimsPage.getTotalListElementInCurrentPage().getText());
+		printAllUserNameToTerminal(expenseClaimsPage.getTableResultRows(), EXPENSE_CLAIMS_ID_TAGNAME);
 		assertEquals(size, expenseClaimsPage.getTableResultRows().size());
 	}
 
