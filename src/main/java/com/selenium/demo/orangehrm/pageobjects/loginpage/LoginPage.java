@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.selenium.demo.orangehrm.pageobjects.common.AbstractOrangeHrmPage;
 import com.selenium.demo.orangehrm.pageobjects.dashboardpage.DashboardPage;
 import com.selenium.demo.pageobjects.common.AbstractPage;
 import com.selenium.demo.testbase.BrowsersEnum;
