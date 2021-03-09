@@ -38,15 +38,15 @@ public class MyInfoTests extends OrangeHrmTestBase {
 
 	@Test
 	public void myInfoTest() {
-		assertEquals(FIRST_NAME, myInfoPage.getFirstNameField().getAttribute("value"), "First name value is not valid.");
-		assertEquals(MIDDLE_NAME, myInfoPage.getMiddleName().getAttribute("value"), "Middle name value is not valid.");
-		assertEquals(LAST_NAME, myInfoPage.getLastNameField().getAttribute("value"), "Last name value is not valid.");
-		assertEquals(EMPLOYEE_ID, myInfoPage.getEmployeeIdField().getAttribute("value"), "Employe Id is not valid.");
-		assertEquals(DATE_OF_BIRTH, myInfoPage.getEmpBirthdayField().getAttribute("value"), "Date of birth is not valid.");
-		assertEquals(MARTIAL_STATUS, myInfoPage.getEmpMaritalStatusField().getAttribute("value"), "Martial Status is not valid.");
-		assertEquals(GENDER, myInfoPage.getEmpGenderField().getAttribute("value"), "Gender is not valid.");
-		assertEquals(NATIONALITY, myInfoPage.getNationalityCodeInput().getAttribute("value"), "Nationality is not valid.");
-		assertEquals(DRIVER_LICENS_EXP_DATE, myInfoPage.getDriverLicenseExpDateField().getAttribute("value"), "Driver licens exp date value is not valid.");
+		assertEquals(FIRST_NAME, myInfoPage.getFirstNameFieldValue(), "First name value is not valid.");
+		assertEquals(MIDDLE_NAME, myInfoPage.getMiddleName(), "Middle name value is not valid.");
+		assertEquals(LAST_NAME, myInfoPage.getLastNameField(), "Last name value is not valid.");
+		assertEquals(EMPLOYEE_ID, myInfoPage.getEmployeeIdField(), "Employe Id is not valid.");
+		assertEquals(DATE_OF_BIRTH, myInfoPage.getEmpBirthdayField(), "Date of birth is not valid.");
+		assertEquals(MARTIAL_STATUS, myInfoPage.getEmpMaritalStatusField(), "Martial Status is not valid.");
+		assertEquals(GENDER, myInfoPage.getEmpGenderField(), "Gender is not valid.");
+		assertEquals(NATIONALITY, myInfoPage.getNationalityCodeInput(), "Nationality is not valid.");
+		assertEquals(DRIVER_LICENS_EXP_DATE, myInfoPage.getDriverLicenseExpDateField(), "Driver licens exp date value is not valid.");
 	}
 	
 }

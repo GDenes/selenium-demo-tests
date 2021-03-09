@@ -51,7 +51,8 @@ public class MyInfoPage extends AbstractOrangeHrmPage {
 	
 	@FindBy(id = "militaryService")
 	private WebElement militaryServiceField;
-	
+
+	private static final String GET_ATTRIBUTE_VALUE = "value";
 	
 	public MyInfoPage(WebDriver driver, BrowsersEnum browser) {
 		super(driver, browser);
@@ -65,56 +66,40 @@ public class MyInfoPage extends AbstractOrangeHrmPage {
 		new WaitForElementToAppear(driver).apply(firstNameField);
 	}
 
-	public WebElement getFirstNameField() {
-		return firstNameField;
+	public String getFirstNameFieldValue() {
+		return firstNameField.getAttribute(GET_ATTRIBUTE_VALUE);
 	}
 
-	public WebElement getMiddleName() {
-		return middleName;
+	public String getMiddleName() {
+		return middleName.getAttribute(GET_ATTRIBUTE_VALUE);
 	}
 
-	public WebElement getLastNameField() {
-		return lastNameField;
+	public String getLastNameField() {
+		return lastNameField.getAttribute(GET_ATTRIBUTE_VALUE);
 	}
 
-	public WebElement getEmployeeIdField() {
-		return employeeIdField;
+	public String getEmployeeIdField() {
+		return employeeIdField.getAttribute(GET_ATTRIBUTE_VALUE);
 	}
 
-	public WebElement getOtherId() {
-		return otherId;
+	public String getEmpBirthdayField() {
+		return empBirthdayField.getAttribute(GET_ATTRIBUTE_VALUE);
 	}
 
-	public WebElement getEmpBirthdayField() {
-		return empBirthdayField;
+	public String getEmpMaritalStatusField() {
+		return empMaritalStatusField.getAttribute(GET_ATTRIBUTE_VALUE);
 	}
 
-	public WebElement getEmpMaritalStatusField() {
-		return empMaritalStatusField;
+	public String getEmpGenderField() {
+		return empGenderField.getAttribute(GET_ATTRIBUTE_VALUE);
 	}
 
-	public WebElement getEmpGenderField() {
-		return empGenderField;
+	public String getNationalityCodeInput() {
+		return nationalityCodeInput.getAttribute(GET_ATTRIBUTE_VALUE);
 	}
 
-	public WebElement getNationalityCodeInput() {
-		return nationalityCodeInput;
-	}
-
-	public WebElement getDriverLicenseNoField() {
-		return driverLicenseNoField;
-	}
-
-	public WebElement getDriverLicenseExpDateField() {
-		return driverLicenseExpDateField;
-	}
-
-	public WebElement getNickNameField() {
-		return nickNameField;
-	}
-
-	public WebElement getMilitaryServiceField() {
-		return militaryServiceField;
+	public String getDriverLicenseExpDateField() {
+		return driverLicenseExpDateField.getAttribute(GET_ATTRIBUTE_VALUE);
 	}
 	
 }
