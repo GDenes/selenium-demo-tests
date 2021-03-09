@@ -8,7 +8,6 @@ import org.slf4j.LoggerFactory;
 
 import com.selenium.demo.testbase.BrowsersEnum;
 
-
 public abstract class AbstractPage extends LoadableComponent<AbstractPage> {
 
 	protected static final Logger logger = LoggerFactory.getLogger(AbstractPage.class);
