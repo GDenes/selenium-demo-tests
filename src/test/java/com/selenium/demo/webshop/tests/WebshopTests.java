@@ -5,13 +5,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.selenium.demo.screenshot.Screenshot;
 import com.selenium.demo.testbase.WebShopTestBase;
 import com.selenium.demo.webshop.enums.ColorEnum;
 import com.selenium.demo.webshop.enums.SizeEnum;
 import com.selenium.demo.webshop.pageobjects.fadedshortpage.AddCartDialogBox;
 import com.selenium.demo.webshop.pageobjects.fadedshortpage.FadedShortPage;
 import com.selenium.demo.webshop.pageobjects.homepage.HomePage;
-import com.selenium.demo.webshop.pageobjects.navigationbar.NavigationBar;
 import com.selenium.demo.webshop.pageobjects.orderpage.OrderPage;
 import com.selenium.demo.webshop.pageobjects.quickview.QuickViewDialogBox;
 import com.selenium.demo.webshop.pageobjects.searchpage.SearchPage;
@@ -44,7 +44,7 @@ public class WebshopTests extends WebShopTestBase {
 
 	@Test
 	public void createScreenShotTest() {
-		createScreenShotByElement(homePage.getGirlInTheRedDress(), SCRENSHOOT_NAME);
+		new Screenshot().createScreenShotByElement(homePage.getGirlInTheRedDress(), SCRENSHOOT_NAME);
 	}
 	
 	@Test
