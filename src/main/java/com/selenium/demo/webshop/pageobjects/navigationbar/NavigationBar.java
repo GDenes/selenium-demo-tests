@@ -15,37 +15,39 @@ import com.selenium.demo.webshop.pageobjects.tshirtpage.TShirtsPage;
 public class NavigationBar extends AbstractPage {
 	@FindBy(css = ".sf-with-ul[title='Women']")
 	private WebElement womenButton;
-	
+
 	@FindBy(css = "ul.sf-menu > li > [title='Dresses']")
 	private WebElement dressesButton;
 
 	@FindBy(css = "ul.sf-menu .submenu-container [title='T-shirts']")
 	private WebElement TShirtsButton;
-	
+
 	@FindBy(css = "#search_query_top")
 	private WebElement searchField;
 
 	public NavigationBar(WebDriver driver, BrowsersEnum browser) {
 		super(driver, browser);
-		
+
 	}
-	
+
 	@Override
 	protected void isLoaded() throws Error {
 		super.isLoaded();
 		
-		new WaitForElementToAppear(driver).apply(womenButton);
-		new WaitForElementToAppear(driver).apply(dressesButton);
-		new WaitForElementToAppear(driver).apply(searchField);
+		final WaitForElementToAppear waitForElementToAppear = new WaitForElementToAppear(driver);
+
+		waitForElementToAppear.apply(womenButton);
+		waitForElementToAppear.apply(dressesButton);
+		waitForElementToAppear.apply(searchField);
 	}
-	
+
 	public SearchPage fillInputFieldAndSearch(String searchText) {
 		searchField.sendKeys(searchText);
 		searchField.sendKeys(Keys.ENTER);
-		
+
 		return new SearchPage(driver, browser);
 	}
-	
+
 	public TShirtsPage hoverAndClickTshirtsButton() {
 		Actions action = new Actions(driver);
 		action.moveToElement(womenButton).perform();

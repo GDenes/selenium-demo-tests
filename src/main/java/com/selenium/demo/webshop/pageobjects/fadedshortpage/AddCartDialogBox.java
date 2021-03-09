@@ -13,13 +13,13 @@ public class AddCartDialogBox extends AbstractWebShopPage {
 
 	@FindBy(css = "#layer_cart_product_title")
 	private WebElement productTitle;
-	
+
 	@FindBy(css = "#layer_cart_product_attributes")
 	private WebElement colorAndSize;
-	
+
 	@FindBy(css = "a.button-medium > span")
 	private WebElement proceedToCheckoutButton;
-	
+
 	public AddCartDialogBox(WebDriver driver, BrowsersEnum browser) {
 		super(driver, browser);
 	}
@@ -28,19 +28,20 @@ public class AddCartDialogBox extends AbstractWebShopPage {
 	protected void isLoaded() throws Error {
 		super.isLoaded();
 
-		new WaitForElementToAppear(driver).apply(productTitle);
-		new WaitForElementToAppear(driver).apply(proceedToCheckoutButton);
+		final WaitForElementToAppear waitForElementToAppear = new WaitForElementToAppear(driver);
+
+		waitForElementToAppear.apply(productTitle);
+		waitForElementToAppear.apply(proceedToCheckoutButton);
 	}
-	
-	
+
 	public String getProductTitleText() {
 		return productTitle.getText();
 	}
-	
+
 	public String getColorAndSizeText() {
 		return colorAndSize.getText();
 	}
-	
+
 	public OrderPage clickProceedToCheckoutButton() {
 		proceedToCheckoutButton.click();
 		return new OrderPage(driver, browser);

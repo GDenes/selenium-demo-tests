@@ -13,43 +13,45 @@ public class OrderPage extends AbstractWebShopPage {
 
 	@FindBy(css = "#total_product")
 	private WebElement totalProduct;
-	
+
 	@FindBy(css = "#total_shipping")
 	private WebElement totalShipping;
 
 	@FindBy(css = "#total_tax")
 	private WebElement totalTax;
-	
+
 	@FindBy(css = "#total_price")
 	private WebElement totalPrice;
-	
+
 	@FindBy(css = "a.standard-checkout > span")
 	private WebElement proceedToCheckoutButton;
-	
+
 	public OrderPage(WebDriver driver, BrowsersEnum browser) {
 		super(driver, browser);
 	}
-	
+
 	@Override
 	protected void isLoaded() throws Error {
 		super.isLoaded();
-		
-		new WaitForElementToAppear(driver).apply(totalProduct);
-		new WaitForElementToAppear(driver).apply(totalShipping);
-		new WaitForElementToAppear(driver).apply(totalTax);
-		new WaitForElementToAppear(driver).apply(totalPrice);
-		new WaitForElementToAppear(driver).apply(proceedToCheckoutButton);
+
+		final WaitForElementToAppear waitForElementToAppear = new WaitForElementToAppear(driver);
+
+		waitForElementToAppear.apply(totalProduct);
+		waitForElementToAppear.apply(totalShipping);
+		waitForElementToAppear.apply(totalTax);
+		waitForElementToAppear.apply(totalPrice);
+		waitForElementToAppear.apply(proceedToCheckoutButton);
 	}
-	
+
 	public SignInPage clickProceedToCheckoutButton() {
 		proceedToCheckoutButton.click();
 		return new SignInPage(driver, browser);
 	}
-	
+
 	public String getTotalProductText() {
 		return totalProduct.getText();
 	}
-	
+
 	public String getTotalShippingText() {
 		return totalShipping.getText();
 	}
@@ -61,6 +63,5 @@ public class OrderPage extends AbstractWebShopPage {
 	public String getTotalPriceText() {
 		return totalPrice.getText();
 	}
-
 
 }

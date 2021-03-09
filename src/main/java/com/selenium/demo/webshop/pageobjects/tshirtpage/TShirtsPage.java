@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.selenium.demo.pageobjects.common.AbstractPage;
 import com.selenium.demo.testbase.BrowsersEnum;
 import com.selenium.demo.wait.WaitForElementToAppear;
 import com.selenium.demo.webshop.pageobjects.common.AbstractWebShopPage;
@@ -28,6 +27,7 @@ public class TShirtsPage extends AbstractWebShopPage {
 	
 	public FadedShortPage clickFadedShortItem() {
 		fadedShortItem.click();
+		
 		return new FadedShortPage(driver, browser);
 	}
 
