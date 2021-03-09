@@ -26,15 +26,17 @@ public class ElementsPage extends AbstractPage {
 	protected void isLoaded() throws Error {
 		super.isLoaded();
 
-		new WaitForElementToAppear(driver).apply(dynamicProperties);
-		new WaitForElementToAppear(driver).apply(uploadAndDownload);
+		final WaitForElementToAppear waitForElementToAppear = new WaitForElementToAppear(driver);
+
+		waitForElementToAppear.apply(dynamicProperties);
+		waitForElementToAppear.apply(uploadAndDownload);
 	}
 
 	public DynamicPropertiesPage navigateToDynamicPropertiesPage() {
 		dynamicProperties.click();
 		return new DynamicPropertiesPage(driver, browser);
 	}
-	
+
 	public UploadAndDownloadPage navigateToUpladAndDownloadPage() {
 		uploadAndDownload.click();
 		return new UploadAndDownloadPage(driver, browser);

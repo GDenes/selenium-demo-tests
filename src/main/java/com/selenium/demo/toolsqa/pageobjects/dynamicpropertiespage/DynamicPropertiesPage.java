@@ -27,6 +27,11 @@ public class DynamicPropertiesPage extends AbstractPage {
 		super(driver, browser);
 	}
 
+	@Override
+	protected void isLoaded() throws Error {
+		super.isLoaded();
+	}
+
 	public Boolean willEnabledButton() {
 
 		WebDriverWait wait = new WebDriverWait(driver, WAIT);
@@ -42,7 +47,7 @@ public class DynamicPropertiesPage extends AbstractPage {
 		}
 		return false;
 	}
-	
+
 	public boolean visibledButton() {
 		WebDriverWait wait = new WebDriverWait(driver, WAIT);
 		return wait.until(ExpectedConditions.visibilityOf(visibleAfter)).isDisplayed();
