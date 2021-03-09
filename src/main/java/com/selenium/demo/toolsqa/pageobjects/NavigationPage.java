@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import com.selenium.demo.pageobjects.common.AbstractPage;
 import com.selenium.demo.testbase.BrowsersEnum;
 import com.selenium.demo.toolsqa.pageobjects.elementspage.ElementsPage;
+import com.selenium.demo.toolsqa.pageobjects.iteractionspage.InteractionsPage;
 import com.selenium.demo.wait.WaitForElementToAppear;
 
 public class NavigationPage extends AbstractPage {
@@ -27,7 +28,7 @@ public class NavigationPage extends AbstractPage {
 	private WebElement interactions;
 	
 	@FindBy(css = "div.category-cards > div:nth-of-type(6) > div")
-	private WebElement BookStoreApplication;
+	private WebElement bookStoreApplication;
 
 
 	public NavigationPage(WebDriver driver, BrowsersEnum browser) {
@@ -37,17 +38,25 @@ public class NavigationPage extends AbstractPage {
 	@Override
 	protected void isLoaded() throws Error {
 		super.isLoaded();
-
-		new WaitForElementToAppear(driver).apply(elements);
-		new WaitForElementToAppear(driver).apply(forms);
-		new WaitForElementToAppear(driver).apply(alertsFrameWindow);
-		new WaitForElementToAppear(driver).apply(widgets);
-		new WaitForElementToAppear(driver).apply(interactions);
-		new WaitForElementToAppear(driver).apply(BookStoreApplication);
+		
+		final WaitForElementToAppear waitForElementToAppear = new WaitForElementToAppear(driver);
+		
+		waitForElementToAppear.apply(elements);
+		waitForElementToAppear.apply(forms);
+		waitForElementToAppear.apply(alertsFrameWindow);
+		waitForElementToAppear.apply(widgets);
+		waitForElementToAppear.apply(interactions);
+		waitForElementToAppear.apply(bookStoreApplication);
 	}
 
 	public ElementsPage navigateToElementsPage() {
 		elements.click();
 		return new ElementsPage(driver, browser);
 	}
+	
+	public InteractionsPage navigateToInteractionsPage() {
+		interactions.click();
+		return new InteractionsPage(driver, browser);
+	}
+	
 }
