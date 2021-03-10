@@ -33,7 +33,6 @@ public class DynamicPropertiesPage extends AbstractPage {
 	}
 
 	public Boolean willEnabledButton() {
-
 		final WebDriverWait wait = new WebDriverWait(driver, WAIT);
 		return wait.until(ExpectedConditions.elementToBeClickable(enableAfter)).isEnabled();
 
@@ -41,10 +40,8 @@ public class DynamicPropertiesPage extends AbstractPage {
 
 	public Boolean colorChangedButton() {
 		final String className = colorChange.getAttribute("class");
-		if (className.contains(DANGER_CLASS_NAME)) {
-			return true;
-		}
-		return false;
+		
+		return className.contains(DANGER_CLASS_NAME);
 	}
 
 	public boolean visibledButton() {

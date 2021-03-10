@@ -34,9 +34,9 @@ public class InteractionsTests extends ToolsQATestBase {
 				.build().perform();
 
 		assertEquals(DROPPED_VALUE, droppablePage.getDroppableSquareComponentText(),
-				"Dragable component was not dropped.");
+				"Dragable component did not dropped.");
 		assertTrue(droppablePage.getDroppableSquareComponentBackgroundValue().contains(DROPPED_SQUARE_BACKGROUND_COLOR),
-				"Dragable component was not dropped, bacause background-color value: ");
+				"Dragable component did not dropped, bacause background-color value: ");
 	}
 
 }
