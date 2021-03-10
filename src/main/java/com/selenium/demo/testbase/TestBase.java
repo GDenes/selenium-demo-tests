@@ -1,6 +1,6 @@
 package com.selenium.demo.testbase;
 
-import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
@@ -13,7 +13,7 @@ public abstract class TestBase {
 	protected static final Logger logger = LoggerFactory.getLogger(TestBase.class);
 
 	protected static final BrowsersEnum browser = BrowsersEnum.CHROME_HEADLESS;
-	private static WebDriver driver = new DriverFactory().createDriver(browser);
+	private WebDriver driver = new DriverFactory().createDriver(browser);
 	
 	@BeforeEach
 	public void setUp() throws Exception {
@@ -22,12 +22,12 @@ public abstract class TestBase {
 		}
 	}
 	
-	@AfterAll
-	public static void afterClass() {
+	@AfterEach
+	public  void afterClass() {
 		driver.close();
 	}
 	
-	public static WebDriver getDriver() {
+	public  WebDriver getDriver() {
 		return driver;
 	}
 	
