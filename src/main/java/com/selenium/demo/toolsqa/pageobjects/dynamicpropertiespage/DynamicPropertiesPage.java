@@ -34,14 +34,13 @@ public class DynamicPropertiesPage extends AbstractPage {
 
 	public Boolean willEnabledButton() {
 
-		WebDriverWait wait = new WebDriverWait(driver, WAIT);
-		WebElement willEnabledButton = wait.until(ExpectedConditions.elementToBeClickable(enableAfter));
-		return willEnabledButton.isEnabled();
+		final WebDriverWait wait = new WebDriverWait(driver, WAIT);
+		return wait.until(ExpectedConditions.elementToBeClickable(enableAfter)).isEnabled();
 
 	}
 
 	public Boolean colorChangedButton() {
-		String className = colorChange.getAttribute("class");
+		final String className = colorChange.getAttribute("class");
 		if (className.contains(DANGER_CLASS_NAME)) {
 			return true;
 		}
@@ -49,7 +48,7 @@ public class DynamicPropertiesPage extends AbstractPage {
 	}
 
 	public boolean visibledButton() {
-		WebDriverWait wait = new WebDriverWait(driver, WAIT);
+		final WebDriverWait wait = new WebDriverWait(driver, WAIT);
 		return wait.until(ExpectedConditions.visibilityOf(visibleAfter)).isDisplayed();
 	}
 

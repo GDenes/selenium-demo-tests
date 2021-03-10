@@ -8,6 +8,7 @@ import com.selenium.demo.pageobjects.common.AbstractPage;
 import com.selenium.demo.testbase.BrowsersEnum;
 import com.selenium.demo.toolsqa.pageobjects.elementspage.ElementsPage;
 import com.selenium.demo.toolsqa.pageobjects.iteractionspage.InteractionsPage;
+import com.selenium.demo.toolsqa.pageobjects.widgetspage.WidgetsPage;
 import com.selenium.demo.wait.WaitForElementToAppear;
 
 public class NavigationPage extends AbstractPage {
@@ -47,6 +48,11 @@ public class NavigationPage extends AbstractPage {
 		waitForElementToAppear.apply(widgets);
 		waitForElementToAppear.apply(interactions);
 		waitForElementToAppear.apply(bookStoreApplication);
+	}
+	
+	public WidgetsPage navigateToWidgetsPage() {
+		widgets.click();
+		return new WidgetsPage(driver, browser);
 	}
 
 	public ElementsPage navigateToElementsPage() {
