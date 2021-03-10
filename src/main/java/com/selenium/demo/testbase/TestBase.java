@@ -12,7 +12,7 @@ public abstract class TestBase {
 	
 	protected static final Logger logger = LoggerFactory.getLogger(TestBase.class);
 
-	protected static final BrowsersEnum browser = BrowsersEnum.CHROME;
+	protected static final BrowsersEnum browser = BrowsersEnum.CHROME_HEADLESS;
 	private WebDriver driver = new DriverFactory().createDriver(browser);
 	
 	@BeforeEach
