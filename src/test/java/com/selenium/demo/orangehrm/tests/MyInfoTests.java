@@ -25,7 +25,7 @@ public class MyInfoTests extends OrangeHrmTestBase {
 	private static final String MARTIAL_STATUS = "Married";
 	private static final String GENDER = "Female";
 	private static final String NATIONALITY = "Canadian";
-	private static final String DRIVER_LICENS_EXP_DATE = "Fri, 06 Mar 2020";
+	private static final String DRIVER_LICENSE_EXP_DATE = "Fri, 06 Mar 2020";
 	
 	 MyInfoPage myInfoPage;
 	
@@ -41,12 +41,12 @@ public class MyInfoTests extends OrangeHrmTestBase {
 		assertEquals(FIRST_NAME, myInfoPage.getFirstNameFieldValue(), "First name value is not valid.");
 		assertEquals(MIDDLE_NAME, myInfoPage.getMiddleName(), "Middle name value is not valid.");
 		assertEquals(LAST_NAME, myInfoPage.getLastNameField(), "Last name value is not valid.");
-		assertEquals(EMPLOYEE_ID, myInfoPage.getEmployeeIdField(), "Employe Id is not valid.");
+		assertEquals(EMPLOYEE_ID, myInfoPage.getEmployeeIdField(), "Employee Id is not valid.");
 		assertEquals(DATE_OF_BIRTH, myInfoPage.getEmpBirthdayField(), "Date of birth is not valid.");
 		assertEquals(MARTIAL_STATUS, myInfoPage.getEmpMaritalStatusField(), "Martial Status is not valid.");
 		assertEquals(GENDER, myInfoPage.getEmpGenderField(), "Gender is not valid.");
 		assertEquals(NATIONALITY, myInfoPage.getNationalityCodeInput(), "Nationality is not valid.");
-		assertEquals(DRIVER_LICENS_EXP_DATE, myInfoPage.getDriverLicenseExpDateField(), "Driver licens exp date value is not valid.");
+		assertEquals(DRIVER_LICENSE_EXP_DATE, myInfoPage.getDriverLicenseExpDateField(), "Driver license exp date value is not valid.");
 	}
 	
 }

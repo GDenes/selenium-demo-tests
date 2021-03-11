@@ -12,6 +12,8 @@ import com.selenium.demo.wait.WaitForElementToAppear;
 
 public class UsersPage extends AbstractOrangeHrmPage {
 
+	private static final String GET_ATTRIBUTE_VALUE = "value";
+
 	@FindBy(id = "systemUserDiv")
 	private WebElement usersTable;
 
@@ -26,8 +28,6 @@ public class UsersPage extends AbstractOrangeHrmPage {
 
 	@FindBy(css = ".highlight > tbody:nth-child(3) > tr:nth-child(1)")
 	private WebElement firstRowInTable;
-
-	private static final String GET_ATTRIBUTE_VALUE = "value";
 
 	public UsersPage(WebDriver driver, BrowsersEnum browser) {
 		super(driver, browser);

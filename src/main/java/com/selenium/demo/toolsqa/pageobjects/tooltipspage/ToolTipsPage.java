@@ -13,7 +13,7 @@ import com.selenium.demo.wait.WaitForElementToAppear;
 
 public class ToolTipsPage extends AbstractPage {
 
-	private static final int WAIT = 10;
+	private static final int DRIVER_WAIT_INTERVAL = 10;
 	private static final int PAUSE = 500;
 	
 	@FindBy(css = "#toolTipButton")
@@ -53,7 +53,7 @@ public class ToolTipsPage extends AbstractPage {
 		action.moveToElement(webElement).perform();
 		action.pause(PAUSE).perform();
 		
-		final WebDriverWait wait = new WebDriverWait(driver, WAIT);
+		final WebDriverWait wait = new WebDriverWait(driver, DRIVER_WAIT_INTERVAL);
 		return wait.until(ExpectedConditions.visibilityOf(toolTipText)).getText();
 	}
 

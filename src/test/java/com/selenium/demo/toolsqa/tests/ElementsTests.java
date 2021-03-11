@@ -35,7 +35,7 @@ public class ElementsTests extends ToolsQATestBase {
 
 	@Test
 	public void uploadTest() throws InterruptedException {
-		final UploadAndDownloadPage uploadAndDownloadPage = elementsPage.navigateToUpladAndDownloadPage();
+		final UploadAndDownloadPage uploadAndDownloadPage = elementsPage.navigateToUploadAndDownloadPage();
 		uploadAndDownloadPage.uploadSampleFile();
 
 		assertEquals(UPLOADED_FILE_PATH, uploadAndDownloadPage.getFilePathText(), "The file has not been uploaded");

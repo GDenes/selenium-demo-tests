@@ -18,13 +18,13 @@ public class InteractionsPage extends AbstractPage {
 	private WebElement selectableMenuItem;
 	
 	@FindBy(css = "div.show:nth-child(2) > ul:nth-child(1) > li:nth-child(3)")
-	private WebElement resizebleMenuItem;
+	private WebElement resizableMenuItem;
 	
 	@FindBy(css = "div.show:nth-child(2) > ul:nth-child(1) > li:nth-child(4)")
 	private WebElement droppableMenuItem;
 	
 	@FindBy(css = "div.show:nth-child(2) > ul:nth-child(1) > li:nth-child(5)")
-	private WebElement dragabbleMenuItem;
+	private WebElement draggableMenuItem;
 
 	public InteractionsPage(WebDriver driver, BrowsersEnum browser) {
 		super(driver, browser);

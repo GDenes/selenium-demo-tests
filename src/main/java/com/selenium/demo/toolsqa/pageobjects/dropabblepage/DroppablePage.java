@@ -11,10 +11,10 @@ import com.selenium.demo.wait.WaitForElementToAppear;
 public class DroppablePage extends AbstractPage {
 	
 	@FindBy(id = "draggable")
-	private WebElement dragabbleComponent;
+	private WebElement draggableComponent;
 	
 	@FindBy(id = "droppable")
-	private WebElement dropableleSquareComponent;
+	private WebElement droppableSquareComponent;
 
 	public DroppablePage(WebDriver driver, BrowsersEnum browser) {
 		super(driver, browser);
@@ -26,23 +26,23 @@ public class DroppablePage extends AbstractPage {
 		
 		final WaitForElementToAppear waitForElementToAppear = new WaitForElementToAppear(driver);
 		
-		waitForElementToAppear.apply(dragabbleComponent);
-		waitForElementToAppear.apply(dropableleSquareComponent);
+		waitForElementToAppear.apply(draggableComponent);
+		waitForElementToAppear.apply(droppableSquareComponent);
 	}
 	
-	public WebElement getDragabbleComponent() {
-		return dragabbleComponent;
+	public WebElement getDraggableComponent() {
+		return draggableComponent;
 	}
 
-	public WebElement getDropableleSquareComponent() {
-		return dropableleSquareComponent;
+	public WebElement getDroppableSquareComponent() {
+		return droppableSquareComponent;
 	}
 
 	public String getDroppableSquareComponentText() {
-		return dropableleSquareComponent.getText();
+		return droppableSquareComponent.getText();
 	}
 
 	public String getDroppableSquareComponentBackgroundValue() {
-		return dropableleSquareComponent.getCssValue("background-color");
+		return droppableSquareComponent.getCssValue("background-color");
 	}
 }

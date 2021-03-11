@@ -12,11 +12,9 @@ public class GenericConfig {
 	protected LoggingPreferences logTypes() {
 		final List<String> logTypes = Collections.singletonList(LogType.BROWSER);
 
-		final LoggingPreferences logs = new LoggingPreferences();
+		LoggingPreferences logs = new LoggingPreferences();
 		logTypes.forEach(logType -> logs.enable(logType, Level.ALL));
 
 		return logs;
 	}
-	
-	
 }

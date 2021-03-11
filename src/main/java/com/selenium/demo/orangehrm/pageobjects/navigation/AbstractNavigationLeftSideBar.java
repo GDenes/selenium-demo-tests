@@ -15,7 +15,7 @@ public abstract class AbstractNavigationLeftSideBar extends AbstractPage {
 	private WebElement menuItemList;
 
 	@FindBy(id = "menu_expense_viewExpenseModule")
-	private WebElement expenseManuItem;
+	private WebElement expenseMenuItem;
 
 	@FindBy(id = "menu_expense_Claims")
 	private WebElement claimsSubMenuItem;
@@ -34,10 +34,10 @@ public abstract class AbstractNavigationLeftSideBar extends AbstractPage {
 		new WaitForElementToAppear(driver).apply(menuItemList);
 	}
 
-	public ExpenseClaimsPage navigateToExponseClaimsPage() {
+	public ExpenseClaimsPage navigateToExpenseClaimsPage() {
 		final WaitForElementToAppear waitForElementToAppear = new WaitForElementToAppear(driver);
 
-		expenseManuItem.click();
+		expenseMenuItem.click();
 		waitForElementToAppear.apply(claimsSubMenuItem);
 		claimsSubMenuItem.click();
 		waitForElementToAppear.apply(underClaimsEmployeeSubMenuItem);

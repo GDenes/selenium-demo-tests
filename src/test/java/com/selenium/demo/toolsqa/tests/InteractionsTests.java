@@ -30,13 +30,13 @@ public class InteractionsTests extends ToolsQATestBase {
 		final DroppablePage droppablePage = interactionsPage.getDroppablePage();
 		final Actions dragAndDrop = new Actions(getDriver());
 
-		dragAndDrop.dragAndDrop(droppablePage.getDragabbleComponent(), droppablePage.getDropableleSquareComponent())
+		dragAndDrop.dragAndDrop(droppablePage.getDraggableComponent(), droppablePage.getDroppableSquareComponent())
 				.build().perform();
 
 		assertEquals(DROPPED_VALUE, droppablePage.getDroppableSquareComponentText(),
-				"Dragable component did not dropped.");
+				"Draggable component did not dropped.");
 		assertTrue(droppablePage.getDroppableSquareComponentBackgroundValue().contains(DROPPED_SQUARE_BACKGROUND_COLOR),
-				"Dragable component did not dropped, bacause background-color value: ");
+				"Draggable component did not dropped, because background-color value not valid");
 	}
 
 }

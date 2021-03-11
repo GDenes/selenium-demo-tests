@@ -27,7 +27,6 @@ public class QuickViewDialogBox extends AbstractPage {
 		new WaitForElementToAppear(driver).apply(iframe);
 	}
 
-	
 	public String getDescriptionText() {
 		driver.switchTo().frame(iframe);
 		return new WaitForElementToAppear(driver).apply(description).getText();
