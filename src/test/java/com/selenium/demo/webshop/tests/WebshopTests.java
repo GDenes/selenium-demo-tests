@@ -12,7 +12,6 @@ import com.selenium.demo.webshop.pageobjects.quickview.QuickViewDialogBox;
 import com.selenium.demo.webshop.pageobjects.searchpage.SearchPage;
 
 public class WebshopTests extends WebShopTestBase {
-	private static final String SCRENSHOOT_NAME = "redDress";
 	
 	private static final String SEARCH_VALUE = "blouse";
 	private static final String BLOUSE_DESCRIPTION = "Short sleeved blouse with feminine draped sleeve detail.";
@@ -26,7 +25,7 @@ public class WebshopTests extends WebShopTestBase {
 
 	@Test
 	public void createScreenShotTest() {
-		new Screenshot().createScreenShotByElement(homePage.getGirlInTheRedDress(), SCRENSHOOT_NAME);
+		new Screenshot().createScreenShotByElement(homePage.getGirlInTheRedDress());
 	}
 	
 	@Test
