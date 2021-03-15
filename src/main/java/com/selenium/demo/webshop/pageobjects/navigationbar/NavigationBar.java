@@ -20,14 +20,13 @@ public class NavigationBar extends AbstractPage {
 	private WebElement dressesButton;
 
 	@FindBy(css = "ul.sf-menu .submenu-container [title='T-shirts']")
-	private WebElement TShirtsButton;
+	private WebElement tShirtsButton;
 
 	@FindBy(css = "#search_query_top")
 	private WebElement searchField;
 
 	public NavigationBar(WebDriver driver, BrowsersEnum browser) {
 		super(driver, browser);
-
 	}
 
 	@Override
@@ -48,10 +47,10 @@ public class NavigationBar extends AbstractPage {
 		return new SearchPage(driver, browser);
 	}
 
-	public TShirtsPage hoverAndClickTshirtsButton() {
+	public TShirtsPage hoverAndClickTShirtsButton() {
 		Actions action = new Actions(driver);
 		action.moveToElement(womenButton).perform();
-		new WaitForElementToAppear(driver).apply(TShirtsButton).click();
+		new WaitForElementToAppear(driver).apply(tShirtsButton).click();
 		return new TShirtsPage(driver, browser);
 	}
 

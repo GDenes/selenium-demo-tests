@@ -16,7 +16,7 @@ public abstract class TestBase {
 	private WebDriver driver = new DriverFactory().createDriver(browser);
 
 	@BeforeEach
-	public void setUp() throws Exception {
+	public void setUp() {
 		if (driver == null) {
 			driver = new DriverFactory().createDriver(browser);
 		}

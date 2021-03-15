@@ -11,11 +11,8 @@ import com.selenium.demo.orangehrm.pageobjects.loginpage.LoginPage;
 import com.selenium.demo.testbase.OrangeHrmTestBase;
 
 public class EmployeeClaimsTests extends OrangeHrmTestBase {
-
-	private static final String SYS_ADMIN_USERNAME = "_ohrmSysAdmin_";
-	private static final String SYS_ADMIN_PASSWORD = "sysadmin";
 	
-	private static final String EXPENSE_CLAIMS_ID_TAGNAME = "a";
+	private static final String EXPENSE_CLAIMS_ID_TAG_NAME = "a";
 
 	ExpenseClaimsPage expenseClaimsPage;
 	
@@ -23,13 +20,13 @@ public class EmployeeClaimsTests extends OrangeHrmTestBase {
 	public void beforeTest() {
 		final LoginPage loginPage = navigateToOrangeHrmPage();
 		final DashboardPage dashboardPage = loginPage.loginWithCredential(SYS_ADMIN_USERNAME, SYS_ADMIN_PASSWORD);
-		expenseClaimsPage = dashboardPage.getAdminNavigation().navigateToExponseClaimsPage();
+		expenseClaimsPage = dashboardPage.getAdminNavigation().navigateToExpenseClaimsPage();
 	}
 	
 	@Test
 	public void expenseClaimsTest() {
 		int size = Integer.parseInt(expenseClaimsPage.getTotalListElementInCurrentPage());
-		printAllUserNameToTerminal(expenseClaimsPage.getTableResultRows(), EXPENSE_CLAIMS_ID_TAGNAME);
+		printAllUserNameToTerminal(expenseClaimsPage.getTableResultRows(), EXPENSE_CLAIMS_ID_TAG_NAME);
 		assertEquals(size, expenseClaimsPage.getTableResultRows().size());
 	}
 

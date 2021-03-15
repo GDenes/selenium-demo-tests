@@ -13,7 +13,8 @@ public class Screenshot {
 	public Screenshot() {}
 
 	public void createScreenShotByElement(WebElement element, String fileName) {
-		File screenShot = element.getScreenshotAs(OutputType.FILE);
+		final File screenShot = element.getScreenshotAs(OutputType.FILE);
+
 		try {
 			FileUtils.copyFile(screenShot, new File(SCREENSHOT_FILE_PATH + File.separator + fileName + ".png"));
 		} catch (IOException e) {

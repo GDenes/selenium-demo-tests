@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class WaitForElementToAppear implements Function<WebElement, WebElement> {
 
 	private static final int BASIC_WAIT_TIME_IN_SECONDS = 30;
-	private WebDriver driver;
+	final private WebDriver driver;
 
 	public WaitForElementToAppear(WebDriver driver) {
 		this.driver = driver;

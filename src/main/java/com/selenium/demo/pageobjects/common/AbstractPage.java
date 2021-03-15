@@ -26,12 +26,8 @@ public abstract class AbstractPage extends LoadableComponent<AbstractPage> {
 	}
 
 	@Override
-	protected void load() {
-
-	}
+	protected void load() { }
 
 	@Override
-	protected void isLoaded() throws Error {
-
-	}
+	protected void isLoaded() throws Error { }
 }

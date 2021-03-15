@@ -12,9 +12,6 @@ import com.selenium.demo.testbase.OrangeHrmTestBase;
 
 public class UserLIstTests extends OrangeHrmTestBase {
 
-	private static final String SYS_ADMIN_USERNAME = "_ohrmSysAdmin_";
-	private static final String SYS_ADMIN_PASSWORD = "sysadmin";
-
 	private static final String USERNAME_VALUE_FROM_TABLE = "span";
 
 	private static final int ROW_PER_PAGE = 50;

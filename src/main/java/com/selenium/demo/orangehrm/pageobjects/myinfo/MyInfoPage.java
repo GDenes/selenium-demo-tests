@@ -10,8 +10,10 @@ import com.selenium.demo.wait.WaitForElementToAppear;
 
 public class MyInfoPage extends AbstractOrangeHrmPage {
 
+	private static final String GET_ATTRIBUTE_VALUE = "value";
+
 	@FindBy(id = "personal_details_tab")
-	private WebElement pesonalDeatilsTable;
+	private WebElement personalDetailsTable;
 
 	@FindBy(id = "firstName")
 	private WebElement firstNameField;
@@ -46,14 +48,6 @@ public class MyInfoPage extends AbstractOrangeHrmPage {
 	@FindBy(id = "emp_dri_lice_exp_date")
 	private WebElement driverLicenseExpDateField;
 
-	@FindBy(id = "nickName")
-	private WebElement nickNameField;
-
-	@FindBy(id = "militaryService")
-	private WebElement militaryServiceField;
-
-	private static final String GET_ATTRIBUTE_VALUE = "value";
-
 	public MyInfoPage(WebDriver driver, BrowsersEnum browser) {
 		super(driver, browser);
 	}
@@ -64,7 +58,7 @@ public class MyInfoPage extends AbstractOrangeHrmPage {
 
 		final WaitForElementToAppear waitForElementToAppear = new WaitForElementToAppear(driver);
 
-		waitForElementToAppear.apply(pesonalDeatilsTable);
+		waitForElementToAppear.apply(personalDetailsTable);
 		waitForElementToAppear.apply(firstNameField);
 	}
 
