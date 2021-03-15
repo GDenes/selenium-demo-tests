@@ -8,7 +8,7 @@ import com.selenium.demo.webshop.pageobjects.navigationbar.NavigationBar;
 
 public abstract class AbstractWebShopPage extends AbstractPage {
 
-	private NavigationBar navigationBar;
+	private final NavigationBar navigationBar;
 
 	public AbstractWebShopPage(WebDriver driver, BrowsersEnum browser) {
 

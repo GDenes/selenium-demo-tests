@@ -34,7 +34,11 @@ public class LoginPage extends AbstractPage {
 		waitForElementToAppear.apply(passwordInputField);
 		waitForElementToAppear.apply(loginButton);
 	}
-	
+
+	/*
+	* On the login page, credentials are pre-entered. In tests used different users for testing, but function was not
+	* deleted, if it was to be used later
+	* */
 	public DashboardPage loginWithDefaultCredential() {
 		loginButton.click();
 		return new DashboardPage(driver, browser);

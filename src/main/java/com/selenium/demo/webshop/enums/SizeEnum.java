@@ -7,7 +7,7 @@ public enum SizeEnum {
 
 	public final String string;
 	
-	private SizeEnum(String string) {
+	SizeEnum(String string) {
 		this.string = string;
 	}
 	

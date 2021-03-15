@@ -62,7 +62,6 @@ public class FadedShortPage extends AbstractWebShopPage {
 		case ORANGE:
 			orangeColor.click();
 			break;
-
 		}
 	}
 

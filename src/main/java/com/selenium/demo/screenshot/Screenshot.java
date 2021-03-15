@@ -14,8 +14,7 @@ public class Screenshot {
 
 	public void createScreenShotByElement(WebElement element) {
 		final String methodName = Thread.currentThread().getStackTrace()[2].getMethodName();
-
-		File screenShot = element.getScreenshotAs(OutputType.FILE);
+		final File screenShot = element.getScreenshotAs(OutputType.FILE);
 		try {
 			FileUtils.copyFile(screenShot, new File(SCREENSHOT_FILE_PATH + File.separator + methodName + ".png"));
 		} catch (IOException e) {

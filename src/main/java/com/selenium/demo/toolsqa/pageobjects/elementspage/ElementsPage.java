@@ -37,7 +37,7 @@ public class ElementsPage extends AbstractPage {
 		return new DynamicPropertiesPage(driver, browser);
 	}
 
-	public UploadAndDownloadPage navigateToUpladAndDownloadPage() {
+	public UploadAndDownloadPage navigateToUploadAndDownloadPage() {
 		uploadAndDownload.click();
 		return new UploadAndDownloadPage(driver, browser);
 	}

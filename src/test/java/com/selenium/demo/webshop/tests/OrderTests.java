@@ -44,11 +44,11 @@ public class OrderTests extends WebShopTestBase {
 
 	@DisplayName("Parametrized order tests")
 	@ParameterizedTest(name = "{index}: ({0} + {1}) => {2})")
-	@MethodSource("orderTestParamaters")
+	@MethodSource("orderTestParameters")
 	public void OrderTest(SizeEnum size, ColorEnum color, final String expectedAddedColorAndSize) {
-		final TShirtsPage tshirtPage = homePage.getNavigationBar().hoverAndClickTshirtsButton();
+		final TShirtsPage tShirtPage = homePage.getNavigationBar().hoverAndClickTShirtsButton();
 		
-		FadedShortPage fadedShortPage = tshirtPage.clickFadedShortItem();
+		FadedShortPage fadedShortPage = tShirtPage.clickFadedShortItem();
 		fadedShortPage.increaseQuantityNumber();
 		fadedShortPage.selectSize(size);
 		fadedShortPage.selectColor(color);
@@ -72,7 +72,7 @@ public class OrderTests extends WebShopTestBase {
 		assertEquals(CURRENT_STEP, signInPage.getCurrentStepText(), "Current Step text does not match");
 	}
 
-	static Stream<Arguments> orderTestParamaters() {
+	static Stream<Arguments> orderTestParameters() {
 		return Stream.of(
 				Arguments.of(SizeEnum.M, ColorEnum.BLUE, ADD_CART_COLOR_AND_SIZE_01),
 				Arguments.of(SizeEnum.S, ColorEnum.ORANGE, ADD_CART_COLOR_AND_SIZE_02));
