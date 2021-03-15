@@ -16,6 +16,8 @@ public class DriverFactory {
 			return new FirefoxFactory().getDriver();
 		case FIREFOX_HEADLESS:
 			return new FirefoxHeadLessFactory().getDriver();
+		case EDGE:
+			return new EdgeFactory().getDriver();
 		default:
 			throw new UnsupportedOperationException("Browser type is not yet supported");
 		}
