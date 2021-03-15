@@ -12,11 +12,11 @@ public class Screenshot {
 
 	public Screenshot() {}
 
-	public void createScreenShotByElement(WebElement element, String fileName) {
+	public void createScreenShotByElement(WebElement element) {
+		final String methodName = Thread.currentThread().getStackTrace()[2].getMethodName();
 		final File screenShot = element.getScreenshotAs(OutputType.FILE);
-
 		try {
-			FileUtils.copyFile(screenShot, new File(SCREENSHOT_FILE_PATH + File.separator + fileName + ".png"));
+			FileUtils.copyFile(screenShot, new File(SCREENSHOT_FILE_PATH + File.separator + methodName + ".png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
