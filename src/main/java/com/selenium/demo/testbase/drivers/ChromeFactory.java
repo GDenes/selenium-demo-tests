@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import com.selenium.demo.testbase.driver.config.ChromeConfig;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class ChromeFactory extends GenericFactory implements DriverInterface {
 
@@ -18,6 +19,17 @@ public class ChromeFactory extends GenericFactory implements DriverInterface {
 		maximize(driver);
 		
 		logger.trace("Local chrome driver initialized.");
+		return driver;
+	}
+
+	@Override
+	public WebDriver getRemoteWebDriver(String remoteUrl) {
+		final WebDriver driver = RemoteWebDriver.builder()
+				.addAlternative(new ChromeConfig().getOptions())
+				.url(remoteUrl)
+				.build();
+		maximize(driver);
+
 		return driver;
 	}
 }
