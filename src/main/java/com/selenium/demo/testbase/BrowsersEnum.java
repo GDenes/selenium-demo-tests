@@ -5,5 +5,6 @@ public enum BrowsersEnum {
 	CHROME_HEADLESS,
 	FIREFOX,
 	FIREFOX_HEADLESS,
-	EDGE
+	EDGE,
+	EDGE_HEADLESS
 }
