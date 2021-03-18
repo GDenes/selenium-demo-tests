@@ -6,6 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import com.selenium.demo.testbase.driver.config.FirefoxConfig;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class FirefoxFactory extends GenericFactory implements DriverInterface {
 
@@ -19,6 +20,17 @@ public class FirefoxFactory extends GenericFactory implements DriverInterface {
 		
 		logger.trace("Local firefox driver initialized.");
 		return driver;
-	} 
+	}
+
+	@Override
+	public WebDriver getRemoteWebDriver(String remoteUrl) {
+		final WebDriver driver =  RemoteWebDriver.builder()
+				.addAlternative(new FirefoxConfig().getOptions())
+				.url(remoteUrl)
+				.build();
+		maximize(driver);
+
+		return driver;
+	}
 
 }
