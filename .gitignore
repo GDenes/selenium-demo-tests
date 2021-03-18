@@ -12,4 +12,6 @@
 log/
 target/
 
+# Allure
+.allure
 screenshots/

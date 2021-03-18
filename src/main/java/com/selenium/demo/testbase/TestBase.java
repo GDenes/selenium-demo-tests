@@ -10,29 +10,37 @@ import com.selenium.demo.testbase.drivers.DriverFactory;
 
 public abstract class TestBase {
 
-	protected static final Logger logger = LoggerFactory.getLogger(TestBase.class);
+    protected static final Logger logger = LoggerFactory.getLogger(TestBase.class);
 
-	protected static final BrowsersEnum browser = BrowsersEnum.CHROME_HEADLESS;
-	private WebDriver driver = new DriverFactory().createDriver(browser);
+    private static final String REMOTE_IP_PARAMETER_NAME = "remoteIp";
 
-	@BeforeEach
-	public void setUp() {
-		if (driver == null) {
-			driver = new DriverFactory().createDriver(browser);
-		}
-	}
+    protected static final BrowsersEnum browser = BrowsersEnum.CHROME_HEADLESS;
+    private WebDriver driver;
 
-	@AfterEach
-	public void afterClass() {
-		driver.close();
-	}
+    @BeforeEach
+    public void setUp() {
+        final String remoteIpString = getParameter(REMOTE_IP_PARAMETER_NAME);
+        if (remoteIpString != null) {
+            driver = new DriverFactory().createRemoteDriver(browser, remoteIpString);
+        } else {
+            driver = new DriverFactory().createDriver(browser);
+        }
+    }
 
-	public WebDriver getDriver() {
-		return driver;
-	}
+    @AfterEach
+    public void afterClass() {
+        driver.quit();
+    }
 
-	public static BrowsersEnum getBrowser() {
-		return browser;
-	}
+    public WebDriver getDriver() {
+        return driver;
+    }
 
+    public static BrowsersEnum getBrowser() {
+        return browser;
+    }
+
+    private String getParameter(final String parameterName) {
+        return System.getProperty(parameterName);
+    }
 }

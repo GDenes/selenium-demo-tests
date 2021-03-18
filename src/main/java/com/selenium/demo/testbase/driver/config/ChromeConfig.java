@@ -23,7 +23,7 @@ public class ChromeConfig extends GenericConfig {
 		options.addArguments("--ignore-ssl-errors=yes");
 		options.addArguments("--ignore-certificate-errors");
 		
-		options.setCapability(CapabilityType.LOGGING_PREFS, logTypes());
+		//options.setCapability(CapabilityType.LOGGING_PREFS, logTypes());
 		logger.trace("Chrome option capabilities set");
 		
 		return options;
