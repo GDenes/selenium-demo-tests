@@ -1,8 +1,6 @@
 package com.selenium.demo.toolsqa.pageobjects.elementspage;
 
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 
 import com.selenium.demo.pageobjects.common.AbstractPage;
@@ -34,7 +32,8 @@ public class ElementsPage extends AbstractPage {
 	}
 
 	public DynamicPropertiesPage navigateToDynamicPropertiesPage() {
-		body.sendKeys(Keys.PAGE_DOWN);
+		final JavascriptExecutor javascriptExecutor = (JavascriptExecutor)driver;
+		javascriptExecutor.executeScript("arguments[0].scrollIntoView()", dynamicProperties);
 
 		new WaitForElementToAppear(driver).apply(dynamicProperties).click();
 		return new DynamicPropertiesPage(driver, browser);
