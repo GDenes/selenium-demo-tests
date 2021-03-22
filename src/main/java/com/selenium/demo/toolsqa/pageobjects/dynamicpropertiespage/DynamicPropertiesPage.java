@@ -12,7 +12,7 @@ import com.selenium.demo.testbase.BrowsersEnum;
 public class DynamicPropertiesPage extends AbstractPage {
 
 	private static final String DANGER_CLASS_NAME = "text-danger";
-	private static final int WAIT = 6;
+	private static final int WAIT = 30;
 
 	@FindBy(css = "#enableAfter")
 	private WebElement enableAfter;
