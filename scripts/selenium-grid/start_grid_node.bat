@@ -1,2 +1,0 @@
-java -Dwebdriver.chrome.driver="chromedriver.exe" -Dwebdriver.gecko.driver="geckodriver.exe" -Dwebdriver.edge.driver="msedgedriver.exe" -jar %1.jar -role node -hub %2/grid/register/ -browser "browserName=MicrosoftEdge,maxInstances=5" -browser "browserName=firefox, maxInstances=5" -browser "browserName=chrome,maxInstances=5"
-pause
