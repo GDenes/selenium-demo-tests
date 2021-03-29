@@ -8,9 +8,13 @@ import org.slf4j.LoggerFactory;
 
 import com.selenium.demo.testbase.drivers.DriverFactory;
 
+import java.util.concurrent.TimeUnit;
+
 public abstract class TestBase {
 
     protected static final Logger logger = LoggerFactory.getLogger(TestBase.class);
+
+    private static final int IMPLICIT_WAIT_INTERVAL = 10;
 
     private static final String REMOTE_IP_PARAMETER_NAME = "remoteIp";
 
@@ -25,6 +29,7 @@ public abstract class TestBase {
         } else {
             driver = new DriverFactory().createDriver(browser);
         }
+        driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT_INTERVAL, TimeUnit.SECONDS);
     }
 
     @AfterEach
