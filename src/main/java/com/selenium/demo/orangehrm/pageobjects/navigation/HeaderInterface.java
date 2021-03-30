@@ -1,6 +1,9 @@
 package com.selenium.demo.orangehrm.pageobjects.navigation;
 
+import com.selenium.demo.orangehrm.enums.PageEnum;
+import com.selenium.demo.orangehrm.pageobjects.common.AbstractOrangeHrmPage;
+
 public interface HeaderInterface {
-	AdminNavigationLeftSideBar getAdminNavigation();
-	UserNavigationLeftSideBar getUserNavigation();
+
+    AbstractOrangeHrmPage navigateTo(PageEnum pageEnum);
 }

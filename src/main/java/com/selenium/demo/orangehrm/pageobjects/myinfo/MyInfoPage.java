@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import com.selenium.demo.orangehrm.enums.UserEnum;
 import com.selenium.demo.orangehrm.pageobjects.common.AbstractOrangeHrmPage;
 import com.selenium.demo.testbase.BrowsersEnum;
 import com.selenium.demo.wait.WaitForElementToAppear;
@@ -48,7 +49,7 @@ public class MyInfoPage extends AbstractOrangeHrmPage {
 	@FindBy(id = "emp_dri_lice_exp_date")
 	private WebElement driverLicenseExpDateField;
 
-	public MyInfoPage(WebDriver driver, BrowsersEnum browser) {
+	public MyInfoPage(WebDriver driver, BrowsersEnum browser, UserEnum userEnum) {
 		super(driver, browser);
 	}
 

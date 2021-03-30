@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.selenium.demo.orangehrm.enums.PageEnum;
+import com.selenium.demo.orangehrm.enums.UserEnum;
 import com.selenium.demo.orangehrm.pageobjects.dashboardpage.DashboardPage;
 import com.selenium.demo.orangehrm.pageobjects.loginpage.LoginPage;
 import com.selenium.demo.orangehrm.pageobjects.userpage.UsersPage;
@@ -21,12 +23,12 @@ public class UserLIstTests extends OrangeHrmTestBase {
 	@BeforeEach
 	public void beforeTest() {
 		final LoginPage loginPage = navigateToOrangeHrmPage();
-		dashboardPage = loginPage.loginWithCredential(SYS_ADMIN_USERNAME, SYS_ADMIN_PASSWORD);
+		dashboardPage = loginPage.login(UserEnum.SYSTEM_ADMIN);
 	}
 
 	@Test
 	public void rowPerPageTest() {
-		final UsersPage usersPage = dashboardPage.getAdminNavigation().navigateToUserPages();
+		final UsersPage usersPage = (UsersPage) dashboardPage.navigateTo(PageEnum.USER_PAGE);
 
 		printAllUserNameToTerminal(usersPage.getAllUserName(), USERNAME_VALUE_FROM_TABLE);
 		

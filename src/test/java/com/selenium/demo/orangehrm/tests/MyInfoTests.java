@@ -5,16 +5,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.selenium.demo.orangehrm.enums.PageEnum;
+import com.selenium.demo.orangehrm.enums.UserEnum;
 import com.selenium.demo.orangehrm.pageobjects.dashboardpage.DashboardPage;
 import com.selenium.demo.orangehrm.pageobjects.loginpage.LoginPage;
 import com.selenium.demo.orangehrm.pageobjects.myinfo.MyInfoPage;
 import com.selenium.demo.testbase.OrangeHrmTestBase;
 
 public class MyInfoTests extends OrangeHrmTestBase {
-	
-	//Login credentials
-	private static final String SIMPLE_USER_USERNAME = "linda";
-	private static final String SIMPLE_USER_PASSWORD = "linda.anderson";
 	
 	// Test data
 	private static final String FIRST_NAME = "Linda";
@@ -32,8 +30,8 @@ public class MyInfoTests extends OrangeHrmTestBase {
 	@BeforeEach
 	public void beforeTest() {
 		final LoginPage loginPage = navigateToOrangeHrmPage();
-		final DashboardPage dashboardPage = loginPage.loginWithCredential(SIMPLE_USER_USERNAME, SIMPLE_USER_PASSWORD);
-		myInfoPage = dashboardPage.getUserNavigation().navigateToMyInfoPage();
+		final DashboardPage dashboardPage = loginPage.login(UserEnum.ESS_USER);
+		myInfoPage = (MyInfoPage) dashboardPage.navigateTo(PageEnum.MY_INFO_PAGE);
 	}
 
 	@Test

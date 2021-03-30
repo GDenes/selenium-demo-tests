@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import com.selenium.demo.orangehrm.enums.UserEnum;
 import com.selenium.demo.orangehrm.pageobjects.dashboardpage.DashboardPage;
 import com.selenium.demo.pageobjects.common.AbstractPage;
 import com.selenium.demo.testbase.BrowsersEnum;
@@ -35,23 +36,14 @@ public class LoginPage extends AbstractPage {
 		waitForElementToAppear.apply(loginButton);
 	}
 
-	/*
-	* On the login page, credentials are pre-entered. In tests used different users for testing, but function was not
-	* deleted, if it was to be used later
-	* */
-	public DashboardPage loginWithDefaultCredential() {
-		loginButton.click();
-		return new DashboardPage(driver, browser);
-	}
-	
-	public DashboardPage loginWithCredential(final String username, final String password) {
+	public DashboardPage login(UserEnum userEnum) {
 		clearInputFields();
-		usernameInputField.sendKeys(username);
-		passwordInputField.sendKeys(password);
-		
+		usernameInputField.sendKeys(userEnum.getUsername());
+		passwordInputField.sendKeys(userEnum.getPassword());
+
 		loginButton.click();
-		
-		return new DashboardPage(driver, browser);
+
+		return new DashboardPage(driver, browser, userEnum);
 	}
 	
 	private void clearInputFields() {

@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import com.selenium.demo.orangehrm.enums.UserEnum;
 import com.selenium.demo.orangehrm.pageobjects.common.AbstractOrangeHrmPage;
 import com.selenium.demo.testbase.BrowsersEnum;
 import com.selenium.demo.wait.WaitForElementToAppear;
@@ -29,8 +30,8 @@ public class UsersPage extends AbstractOrangeHrmPage {
 	@FindBy(css = ".highlight > tbody:nth-child(3) > tr:nth-child(1)")
 	private WebElement firstRowInTable;
 
-	public UsersPage(WebDriver driver, BrowsersEnum browser) {
-		super(driver, browser);
+	public UsersPage(WebDriver driver, BrowsersEnum browser, UserEnum userEnum) {
+		super(driver, browser, userEnum);
 	}
 
 	@Override

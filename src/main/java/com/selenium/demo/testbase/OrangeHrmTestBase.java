@@ -10,9 +10,6 @@ import com.selenium.demo.orangehrm.pageobjects.loginpage.LoginPage;
 public abstract class OrangeHrmTestBase extends TestBase {
 	
 	private static final String BASE_URL = "https://orangehrm-demo-6x.orangehrmlive.com";
-
-	protected static final String SYS_ADMIN_USERNAME = "_ohrmSysAdmin_";
-	protected static final String SYS_ADMIN_PASSWORD = "sysadmin";
 	
 	public LoginPage navigateToOrangeHrmPage() {
 		getDriver().get(BASE_URL);

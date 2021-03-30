@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import com.selenium.demo.orangehrm.enums.UserEnum;
 import com.selenium.demo.orangehrm.pageobjects.common.AbstractOrangeHrmPage;
 import com.selenium.demo.testbase.BrowsersEnum;
 import com.selenium.demo.wait.WaitForElementToAppear;
@@ -24,8 +25,8 @@ public class ExpenseClaimsPage extends AbstractOrangeHrmPage {
 	@FindBy(id = "frmList_ohrmListComponenttotal")
 	private WebElement totalListElementInCurrentPage;
 
-	public ExpenseClaimsPage(WebDriver driver, BrowsersEnum browser) {
-		super(driver, browser);
+	public ExpenseClaimsPage(WebDriver driver, BrowsersEnum browser, UserEnum userEnum) {
+		super(driver, browser, userEnum);
 	}
 
 	@Override

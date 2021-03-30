@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import com.selenium.demo.orangehrm.enums.UserEnum;
 import com.selenium.demo.orangehrm.pageobjects.common.AbstractOrangeHrmPage;
 import com.selenium.demo.testbase.BrowsersEnum;
 import com.selenium.demo.wait.WaitForElementToAppear;
@@ -16,8 +17,8 @@ public class DashboardPage extends AbstractOrangeHrmPage {
 	@FindBy(id = "content")
 	private WebElement pageContent;
 
-	public DashboardPage(WebDriver driver, BrowsersEnum browser) {
-		super(driver, browser);
+	public DashboardPage(WebDriver driver, BrowsersEnum browser, UserEnum userEnum) {
+		super(driver, browser, userEnum);
 	}
 	
 	@Override
